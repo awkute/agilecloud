@@ -1,0 +1,11 @@
+# comment out sa if it was previously created
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  annotations:
+    eks.amazonaws.com/role-arn: ${external-dns_role}
+  name: external-dns
+  namespace: ${namespace}
+  labels:
+    app.kubernetes.io/name: external-dns
